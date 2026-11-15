@@ -1,31 +1,45 @@
 # Content maintenance guide
 
-## Page purpose
+## Purpose and factual ownership
 
-Give each service page a distinct audience need. Explain the work, outline the process, and tell the reader what to prepare. Prefer useful detail over keyword repetition or a target word count. Never invent evidence, outcomes, prices, staff credentials, or contact information.
+**Summary:** give each page one distinct visitor need and verify service facts before publication.
 
-## Navigation and cross-links
+Explain who the service fits, what it delivers, what is excluded, and how to take a useful next step. Never invent clients, evidence, outcomes, pricing, staff credentials, or contact details. Starter service definitions need owner confirmation before they become commercial commitments. Refer to the [catalogue](service-catalog.md) for the intended boundaries.
 
-All content pages share Home, Services, and Documentation links. Service pages include a breadcrumb and a route back to the service hub. Use descriptive link labels, not 'click here'. Keep links within the `/praia-digital/` base path and use trailing slashes for directory pages.
+## Required service-page sections
 
-The [catalogue](service-catalog.md) maps live routes to HTML files. When changing a path, update the home page, hub, related service references, canonical URL, sitemap, and documentation together. Verify that the new route is live before removing an old route; GitHub Pages does not provide arbitrary server-side redirects.
+**Summary:** make pages easy to scan while answering the questions needed to choose and scope the work.
 
-## Editing checklist
+Each individual guide has one H1, a short service-summary box, a linked on-page contents list, and six sections: `fit`, `deliverables`, `process`, `prepare`, `questions`, and `related`. Start each section with a concise `p.section-intro` summary. Include concrete deliverables, review criteria, exclusions, preparation requirements, and at least two useful FAQs. Do not pad text to meet a word count. A short page can trigger review, but completeness and distinct purpose decide whether expansion is needed.
 
-1. Confirm the service facts and the page's intended purpose.
-2. Use a single H1 and a logical sequence of headings.
-3. Keep the title and description distinct from other pages.
-4. Preserve the skip link, language attribute, and navigation labels.
-5. Run `python3 scripts/check_site.py` from the repository root.
-6. Review keyboard navigation, zoom, and narrow-screen layout in a browser.
-7. Commit to `main`, wait for Pages, then verify the public pages and log the evidence.
+## Navigation and contextual links
 
-## Hosting and boundaries
+**Summary:** provide both predictable menus and explanations for moving between related services.
 
-Pages serves the repository root on `main`; `.nojekyll` disables Jekyll processing. Assets use `/praia-digital/` paths, so preview the project from its parent directory as described in the [repository overview](../README.md). Do not add a project-level `robots.txt` and assume it controls the account domain: robots rules belong at the host root.
+The primary menu contains Home, Services, How to choose, and Documentation. A separate visible Service shortcuts navigation links all four guides without requiring a hover action or JavaScript. Each guide has a breadcrumb back to the hub and a current-page marker in the shortcuts. Preserve navigation labels and keyboard focus styles.
 
-No analytics, advertisements, consent collection, working form, monitoring service, or external account integration is enabled. If those are later required, agree the data handling and implementation separately. Git history helps recover source changes, but it is not a backup of unrelated hosting services or databases.
+Every service guide should include at least two distinct contextual links to related service pages; the current four-service catalogue links all three complementary guides. Explain why each destination helps. Do not count repeated header, breadcrumb, footer, or on-page menu links as contextual recommendations. Use descriptive service names, not 'click here'.
 
-## Audit log
+Use `/praia-digital/` base paths and trailing slashes for public directories. When renaming a route, update home cards, hub cards, both menus, breadcrumbs, related-service lists, canonical URLs, the sitemap, and documentation together. GitHub Pages does not provide arbitrary server-side redirects; plan a static redirect page if an old address must remain usable.
 
-Use [the audit record](audit.md) for crawl settings, coverage, findings, and verification limits. Report technical failures separately from editorial improvement opportunities. Return to the [documentation index](README.md).
+## Validation and publication
+
+**Summary:** validate source structure, wait for deployment, and check the public result separately.
+
+1. Confirm the page purpose, service facts, exclusions, and approvers.
+2. Run `python3 scripts/check_site.py` from the repository root. It checks local HTML targets/fragments, metadata, sitemap coverage, required service sections and summaries, menu coverage, related-service targets, and local Markdown file links.
+3. Review keyboard navigation, zoom, narrow-screen layout, and FAQ controls in a browser. Automated HTML checks do not certify accessibility.
+4. Commit approved changes to `main`. Pages publishes `/` with `.nojekyll`; no build dependencies or custom domain are configured.
+5. Wait for the latest Pages build to report `built` for the intended revision. Verify the live `site-revision` marker instead of assuming the source is already public.
+6. Crawl all six expected content pages with Firecrawl after meaningful navigation or content changes. Keep the crawl inside `/praia-digital/`, disable cached content, and retain full HTML to inspect navigation.
+7. Compare expected and observed URLs, HTTP status, internal targets/fragments, main-content explanations, and contextual service links. Record evidence and limits in the [audit log](audit.md).
+
+For local preview, follow the [repository overview](../README.md). Project-level `robots.txt` files do not control the account host root, so this repository does not pretend to configure host-wide crawler rules.
+
+## Data handling and operational boundaries
+
+**Summary:** publishing static service guides does not activate external systems or authorise data collection.
+
+No enquiry backend, analytics, advertising, monitoring service, or external integration is enabled. Agree access, consent, data handling, and implementation separately if those are added later. Never place secrets or customer data in public content or issues. Git history recovers source changes, not unrelated databases or external services.
+
+Return to the [documentation index](README.md), [service catalogue](service-catalog.md), or [live service hub](https://priyapondi10-tech.github.io/praia-digital/services/).

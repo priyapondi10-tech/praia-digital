@@ -1,15 +1,19 @@
 # Documentation index
 
-## Site and services
+## Service definitions and relationships
 
-The [service catalogue](service-catalog.md) maps each live service to its source and explains its intended purpose. Start there when changing an offering or checking discoverability.
+The [service catalogue](service-catalog.md) is the route and source-file map. It gives a clear summary for each guide and explains how development, content, campaigns, and care connect. Use it to update an offering without leaving navigation or related services behind.
 
-## Editing and publishing
+## Editing, checks, and deployment
 
-The [content guide](content-guide.md) describes page structure, cross-link rules, validation, and GitHub Pages deployment. Read it before renaming routes or adding claims.
+The [content maintenance guide](content-guide.md) describes the required section summaries, cross-link policy, safe editing process, validation command, and GitHub Pages configuration. It distinguishes structural checks from live verification and manual accessibility review.
 
-## Audit evidence
+## Audit evidence and limitations
 
-The [audit record](audit.md) will distinguish the initial live crawl from later improvements and verification. It must not claim a successful live audit before Firecrawl results exist.
+The [live audit record](audit.md) records the initial Firecrawl crawl, actual findings, changes, and follow-up verification state. It separates observed broken links from editorial opportunities and does not treat word count as an SEO quality score.
 
-Return to the [repository overview](../README.md), [live home page](https://priyapondi10-tech.github.io/praia-digital/), or [live service directory](https://priyapondi10-tech.github.io/praia-digital/services/).
+## Public entry points
+
+Start at the [live home page](https://priyapondi10-tech.github.io/praia-digital/) or [service hub](https://priyapondi10-tech.github.io/praia-digital/services/). Individual guides are [Web Design & Development](https://priyapondi10-tech.github.io/praia-digital/services/web-design-development/), [SEO & Content](https://priyapondi10-tech.github.io/praia-digital/services/seo-content/), [Digital Marketing](https://priyapondi10-tech.github.io/praia-digital/services/digital-marketing/), and [Website Care](https://priyapondi10-tech.github.io/praia-digital/services/website-care/).
+
+Return to the [repository overview](../README.md).
